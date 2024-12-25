@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="prev()">Previous</button>
+    <img style="width: 320px" src="image/1..jpg" alt="" srcset="" />
+    <button onclick="next()">Next</button>
+    <script>
+      var photos = ["image/1.jpg", "image/2.jpg", "image/3.jpg"];
+
+      var slider = document.querySelector("img");
+      var count = 0;
+
+      function next() {
+        count++;
+        if (count >= photos.length) {
+          count = 0;
+          slider.src = photos[count];
+          
+        } else {
+          slider.src = photos[count];
+        }
+      }
+      function prev() {
+        count--;
+        if (count <0) {
+          count = photos.length - 1;
+          slider.src = photos[count];
+          
+        } else {
+          slider.src = photos[count];
+        }
+      }
+    </script>
+  </body>
 </html>
